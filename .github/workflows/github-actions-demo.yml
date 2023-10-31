@@ -23,7 +23,12 @@ jobs:
         working-directory: backend/apigateway/code
       - run: echo "Building has finished"
       - run: echo "Testing has begun"
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}/frontend
       - run: npm test
+        working-directory: frontend
+      - run: npm run test-coverage
         working-directory: frontend
       - run: echo "Testing has finished"
   test:
@@ -32,10 +37,14 @@ jobs:
     steps:
     - run: echo "Testing has begun"
     - uses: actions/checkout@v4
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}/frontend
     - run: npm test
       working-directory: frontend
     - run: npm run test-coverage
       working-directory: frontend
+    - run: echo "Testing has finished"
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
