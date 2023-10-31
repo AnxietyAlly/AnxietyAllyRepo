@@ -29,7 +29,7 @@ router.options('/accounts', (req, res, next) => {
   }
 });
 
-// get a collection of all the accounts and you can use a query
+// get a collection of all the accounts, you can also use a query
 router.get('/accounts', cors(), getAccounts);
 router.post('/accounts', cors(), setAccounts);
 
