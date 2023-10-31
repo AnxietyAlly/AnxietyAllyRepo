@@ -10,12 +10,9 @@
 
 <!-- App Shell -->
 <AppShell>
-	<svelte:fragment slot="header">
+	<svelte:fragment slot="pageFooter">
 		<!-- App Bar -->
 		<AppBar>
-			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
-			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -23,7 +20,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Discord
+					Home
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -31,7 +28,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Twitter
+					Dashboard
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -39,8 +36,16 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					GitHub
+					Profile
 				</a>
+				<a
+				class="btn btn-sm variant-ghost-surface"
+				href="https://github.com/skeletonlabs/skeleton"
+				target="_blank"
+				rel="noreferrer"
+			>
+				Settings
+			</a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
