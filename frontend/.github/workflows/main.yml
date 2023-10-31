@@ -1,9 +1,0 @@
-name: Github Actions AnxietyAlly
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "It's working"
-      - uses: actions/checkout@v4
-      - run: npm ci
