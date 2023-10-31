@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-    - run: npm test
+    - run: npm run test
       working-directory: frontend
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
