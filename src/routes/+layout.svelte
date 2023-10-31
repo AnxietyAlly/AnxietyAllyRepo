@@ -43,9 +43,9 @@
 				href="https://github.com/skeletonlabs/skeleton"
 				target="_blank"
 				rel="noreferrer"
-			>
-				Settings
-			</a>
+				>
+					Settings
+				</a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
