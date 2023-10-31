@@ -1,7 +1,13 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: GitHub Actions AnxietyAlly
+run-name: ${{ github.actor }} is pushing commit(s)
 on: [push]
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The building seems to work"
+      - uses: actions/checkout@v4
+      - run: npm ci
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
