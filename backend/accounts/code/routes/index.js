@@ -3,8 +3,6 @@ import cors from 'cors';
 import {
   getAccounts,
   setAccounts,
-  getAppointmentsForAYearAndMonthAndADay,
-  setAppointmentsForAYearAndMonthAndADay,
 } from '../controllers/accountsController.js';
 const router = express.Router();
 
@@ -34,7 +32,5 @@ router.options('/accounts', (req, res, next) => {
 // get a collection of all the accounts and you can use a query
 router.get('/accounts', cors(), getAccounts);
 router.post('/accounts', cors(), setAccounts);
-router.get('/accounts/:year/:month/:day', cors(), getAppointmentsForAYearAndMonthAndADay);
-router.post('/accounts/:year/:month/:day', cors(), setAppointmentsForAYearAndMonthAndADay);
 
 export default router;
