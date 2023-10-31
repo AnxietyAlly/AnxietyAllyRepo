@@ -1,7 +1,7 @@
 name: Github Actions AnxietyAlly
 on: [push]
 jobs:
-  runAppAndDeploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - run: echo "It's working"
