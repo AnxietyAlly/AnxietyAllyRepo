@@ -1,148 +1,56 @@
 {
   "meta": {
     "name": "accounts",
-    "date": "13 Januari 2023"
+    "date": "31 October 2023"
   },
   "data": [
     {
-      "timeslotId": 1,
-      "starttime": "09.00",
-      "duration": 15,
-      "appointment": {
-        "id": 1,
-        "name": "Sissy",
-        "breed": "🐈"
-      }
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "password": "hashed-password"
     },
     {
-      "timeslotId": 2,
-      "starttime": "09.15",
-      "duration": 15,
-      "appointment": {
-        "id": 2,
-        "name": "Suzy",
-        "breed": "🐕"
-      }
+      "id": 2,
+      "name": "Jane Johnson",
+      "email": "jane123@gmail.com",
+      "password": "hashed-password"
     },
     {
-      "timeslotId": 3,
-      "starttime": "09.30",
-      "duration": 15,
-      "appointment": {
-        "id": 3,
-        "name": "Henk",
-        "breed": "🦜"
-      }
+      "id": 3,
+      "name": "Sally Allison",
+      "email": "sallison10@gmail.com",
+      "password": "hashed-password"
     },
     {
-      "timeslotId": 4,
-      "starttime": "09.45",
-      "duration": 15,
-      "appointment": {
-        "id": 4,
-        "name": "Greet",
-        "breed": "🐢"
-      }
+      "id": 4,
+      "name": "Camille Chase",
+      "email": "chamomilechaser@gmail.com",
+      "password": "hashed-password"
     },
     {
-      "timeslotId": 5,
-      "starttime": "10.00",
-      "duration": 15,
-      "appointment": {
-        "id": 5,
-        "name": "Victor",
-        "breed": "🐈"
-      }
+      "id": 5,
+      "name": "Bradly Fox",
+      "email": "bradedfox13@gmail.com",
+      "password": "hashed-password"
     },
     {
-      "timeslotId": 6,
-      "starttime": "10.15",
-      "duration": 15,
-      "appointment": null
+      "id": 6,
+      "name": "Dani Gore",
+      "email": "thekillcount92@gmail.com",
+      "password": "hashed-password"
     },
     {
-      "timeslotId": 7,
-      "starttime": "10.30",
-      "duration": 15,
-      "appointment": null
+      "id": 7,
+      "name": "Marianna Wild",
+      "email": "wildestlady13@gmail.com",
+      "password": "hashed-password"
     },
     {
-      "timeslotId": 8,
-      "starttime": "10.45",
-      "duration": 15,
-      "appointment": null
-    },
-    {
-      "timeslotId": 9,
-      "starttime": "11.00",
-      "duration": 15,
-      "appointment": {
-        "id": 6,
-        "name": "Mr Jansen",
-        "breed": "🐕"
-      }
-    },
-    {
-      "timeslotId": 10,
-      "starttime": "11.15",
-      "duration": 15,
-      "appointment": {
-        "id": 7,
-        "name": "Patty",
-        "breed": "🐕"
-      }
-    },
-    {
-      "timeslotId": 11,
-      "starttime": "11.30",
-      "duration": 15,
-      "appointment": {
-        "id": 8,
-        "name": "Joris",
-        "breed": "🐍"
-      }
-    },
-    {
-      "timeslotId": 12,
-      "starttime": "11.45",
-      "duration": 15,
-      "appointment": null
-    },
-    {
-      "timeslotId": 13,
-      "starttime": "12.00",
-      "duration": 15,
-      "appointment": {
-        "id": 9,
-        "name": "Joep",
-        "breed": "🐇"
-      }
-    },
-    {
-      "timeslotId": 14,
-      "starttime": "12.15",
-      "duration": 15,
-      "appointment": null
-    },
-    {
-      "timeslotId": 15,
-      "starttime": "12.30",
-      "duration": 15,
-      "appointment": {
-        "id": 10,
-        "name": "Gait",
-        "breed": "🐐"
-      }
-    },
-    {
-      "timeslotId": 16,
-      "starttime": "12.45",
-      "duration": 15,
-      "appointment": {
-        "id": 11,
-        "name": "Choco",
-        "breed": "🐇"
-      }
+      "id": 8,
+      "name": "Rachel Bradley",
+      "email": "theonerachel74@gmail.com",
+      "password": "hashed-password"
     }
   ]
 }

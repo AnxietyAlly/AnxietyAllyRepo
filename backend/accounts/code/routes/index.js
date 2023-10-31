@@ -1,22 +1,21 @@
 import express from 'express';
 import cors from 'cors';
 import {
-  getAppointments,
-  getAppointmentsForAYear,
-  getAppointmentsForAYearAndMonth,
+  getAccounts,
+  setAccounts,
   getAppointmentsForAYearAndMonthAndADay,
   setAppointmentsForAYearAndMonthAndADay,
-} from '../controllers/appointmentsController.js';
+} from '../controllers/accountsController.js';
 const router = express.Router();
 
 // routes
 router.get('/', (req, res, next) => {
-  res.json('hi');
+  res.json('Hi, this is the accounts microservice');
 });
 // router.get('/example', checkName, responseExample);
 // router.post('/example', checkName, updateExample);
 
-router.options('/appointments', (req, res, next) => {
+router.options('/accounts', (req, res, next) => {
   try {
     //set header before response
     res.header({
@@ -32,11 +31,10 @@ router.options('/appointments', (req, res, next) => {
   }
 });
 
-// get a collection of all the appointments and ou can use a query
-router.get('/appointments', cors(), getAppointments);
-router.get('/appointments/:year', cors(), getAppointmentsForAYear);
-router.get('/appointments/:year/:month', cors(), getAppointmentsForAYearAndMonth);
-router.get('/appointments/:year/:month/:day', cors(), getAppointmentsForAYearAndMonthAndADay);
-router.post('/appointments/:year/:month/:day', cors(), setAppointmentsForAYearAndMonthAndADay);
+// get a collection of all the accounts and you can use a query
+router.get('/accounts', cors(), getAccounts);
+router.post('/accounts', cors(), setAccounts);
+router.get('/accounts/:year/:month/:day', cors(), getAppointmentsForAYearAndMonthAndADay);
+router.post('/accounts/:year/:month/:day', cors(), setAppointmentsForAYearAndMonthAndADay);
 
 export default router;
