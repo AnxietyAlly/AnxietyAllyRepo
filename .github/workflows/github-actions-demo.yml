@@ -7,6 +7,12 @@ jobs:
     steps:
       - run: echo "Building has begun"
       - uses: actions/checkout@v4
+      - run: npm ci
+        working-directory: frontend
+      - run: npm ci
+        working-directory: backend/accounts/code
+      - run: npm ci
+        working-directory: backend/apigateway/code
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
