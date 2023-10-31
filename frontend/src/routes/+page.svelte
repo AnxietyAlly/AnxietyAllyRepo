@@ -1,4 +1,9 @@
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script>
+	import Account from '$lib/components/Account.svelte';
+
+	export let data;
+</script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
@@ -34,6 +39,7 @@
 			<p><code class="code">/src/routes/+page.svelte</code></p>
 		</div>
 	</div>
+	<Account ></Account>
 </div>
 
 <style lang="postcss">
