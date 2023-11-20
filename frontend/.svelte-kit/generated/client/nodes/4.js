@@ -1,0 +1,1 @@
+export { default as component } from "../../../../src/routes/questionaire/nextpage/+page.svelte";
