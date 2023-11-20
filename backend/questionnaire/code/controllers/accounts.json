@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "name": "accounts",
+    "date": "31 October 2023"
+  },
+  "data": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "password": "hashed-password"
+    },
+    {
+      "id": 2,
+      "name": "Jane Johnson",
+      "email": "jane123@gmail.com",
+      "password": "hashed-password"
+    },
+    {
+      "id": 3,
+      "name": "Sally Allison",
+      "email": "sallison10@gmail.com",
+      "password": "hashed-password"
+    },
+    {
+      "id": 4,
+      "name": "Camille Chase",
+      "email": "chamomilechaser@gmail.com",
+      "password": "hashed-password"
+    },
+    {
+      "id": 5,
+      "name": "Bradly Fox",
+      "email": "bradedfox13@gmail.com",
+      "password": "hashed-password"
+    },
+    {
+      "id": 6,
+      "name": "Dani Gore",
+      "email": "thekillcount92@gmail.com",
+      "password": "hashed-password"
+    },
+    {
+      "id": 7,
+      "name": "Marianna Wild",
+      "email": "wildestlady13@gmail.com",
+      "password": "hashed-password"
+    },
+    {
+      "id": 8,
+      "name": "Rachel Bradley",
+      "email": "theonerachel74@gmail.com",
+      "password": "hashed-password"
+    }
+  ]
+}
