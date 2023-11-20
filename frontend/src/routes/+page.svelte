@@ -1,10 +1,15 @@
 <div class="min-h-screen bg-sky flex flex-col items-center">
 	<img class="w-40 h-100 mt-5" src=".//anxietyAllyLogo.png" alt="Anxiety Ally Logo">
 	<h1 class="hidden">AnxietyAlly</h1>
-	<div class="h-20 mt-8 space-y-6">
-	  <div class="rounded-md shadow">
+	<div class="h-20 mt-8 grid grid-cols-3 gap-2">
+	  <div class="rounded-md shadow col-span-2">
 		<a href="/" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
 		  Take the first steps!
+		</a>
+	  </div>
+	  <div class="rounded-md shadow">
+		<a href="/" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+		  Login
 		</a>
 	  </div>
 	</div>

@@ -10,7 +10,7 @@
 
 <!-- App Shell -->
 <AppShell>
-	<svelte:fragment slot="pageFooter">
+	<svelte:fragment slot="footer">
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="trail">
@@ -20,7 +20,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Home
+					<img src=".//book-alt.png" alt="Anxiety Ally Logo">
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -28,7 +28,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Dashboard
+					<img src=".//home-icon.png" alt="Anxiety Ally Logo">
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
@@ -36,7 +36,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					Profile
+					<img src=".//user.png" alt="Anxiety Ally Logo">
 				</a>
 				<a
 				class="btn btn-sm variant-ghost-surface"
@@ -44,8 +44,8 @@
 				target="_blank"
 				rel="noreferrer"
 				>
-					Settings
-				</a>
+					<img src=".//settings.png" alt="Anxiety Ally Logo">
+				</a>	
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
