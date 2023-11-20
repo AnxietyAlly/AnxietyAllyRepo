@@ -23,10 +23,43 @@ const tempResponse = {
   },
 };
 
-export async function getQuestions(req, res) {
+export async function getAllQuestions(req, res) {
   try {
-    //set header before response
-    res.status(200).send(data);
+    const stmnt = db.prepare("SELECT * FROM questionnaireQuestions");
+    const rows = stmnt.all();
+    const jsonToSend = {
+      "meta": {
+        "name": "Questionnaire questions",
+        "title": "All questions for the questionnaire",
+        "date": getToday(),
+        "originalUrl": `${req.originalUrl}`,
+      },
+      "data": []
+    }
+    for (let i = 0; i < rows.length; i++) {
+      jsonToSend.data.push(`/questionnaire/questions/${rows[i].id}`)
+    }
+    res.status(200).json(jsonToSend);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export async function getSingleQuestion(req, res) {
+  try {
+    const params = [req.params.id];
+    const stmnt = db.prepare(`SELECT * FROM questionnaireQuestions where id = ?`);
+    const row = stmnt.get(params);
+    const jsonToSend = {
+      "meta": {
+        "name": "Questionnaire question",
+        "title": "Specific question for the questionnaire",
+        "date": getToday(),
+        "originalUrl": `${req.originalUrl}`,
+      },
+      "data": row
+    }
+    res.status(200).json(jsonToSend);
   } catch (err) {
     console.log(err);
   }

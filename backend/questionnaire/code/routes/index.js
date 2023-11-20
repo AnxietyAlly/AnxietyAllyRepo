@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import {
-  getQuestions,
+  getAllQuestions,
+  getSingleQuestion,
   getAllTracks,
   getSpecificTrack
 } from '../controllers/questionnaireController.js';
@@ -29,8 +30,8 @@ router.options('/questionnaire', (req, res, next) => {
 });
 
 // get a collection of all the accounts, you can also use a query
-router.get('/questionnaire/questions', cors(), getAllTracks);
-router.get('/questionnaire/questions/:id', cors(), getSpecificTrack);
+router.get('/questionnaire/questions', cors(), getAllQuestions);
+router.get('/questionnaire/questions/:id', cors(), getSingleQuestion);
 //router.post('/questionnaire', cors(), setResults);
 
 export default router;
