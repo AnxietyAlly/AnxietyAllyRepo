@@ -2,9 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import {
   getAllQuestions,
-  getSingleQuestion,
-  getAllTracks,
-  getSpecificTrack
+  getSingleQuestion
 } from '../controllers/questionnaireController.js';
 const router = express.Router();
 
