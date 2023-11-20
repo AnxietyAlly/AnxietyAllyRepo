@@ -18,12 +18,10 @@
 
       <div class="place-self-auto">
         <a href="/"> <img class="w-40 h-100" src=".//start-journey.png" alt="Anxiety Ally Logo"> </a>
-
       </div>
 
       <div class="place-self-auto">
         <a href="/"> <img class="w-40 h-100" src=".//venting-button.png" alt="Anxiety Ally Logo"> </a>
-
       </div>
     </div>
   </div>
