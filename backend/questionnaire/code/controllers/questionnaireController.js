@@ -53,13 +53,13 @@ export async function getSingleQuestion(req, res) {
     const stmnt = db.prepare(`SELECT * FROM questionnaireQuestions where id = ?`);
     const row = stmnt.get(params);
     const jsonToSend = {
-      "meta": {
-        "name": "Questionnaire question",
-        "title": "Specific question for the questionnaire",
-        "date": getToday(),
-        "originalUrl": `${req.originalUrl}`,
+      meta: {
+        name: "Questionnaire question",
+        title: "Specific question for the questionnaire",
+        date: getToday(),
+        originalUrl: `${req.originalUrl}`,
       },
-      "data": row
+      data: row
     }
     res.status(200).json(jsonToSend);
   } catch (err) {
