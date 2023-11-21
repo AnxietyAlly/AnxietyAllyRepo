@@ -1,4 +1,3 @@
-import data from './accounts.json' assert { type: 'json' };
 import Database from 'better-sqlite3';
 import * as dotenv from 'dotenv';
 dotenv.config({ path: 'variables.env' });

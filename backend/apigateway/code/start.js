@@ -3,7 +3,7 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 dotenv.config({ path: 'variables.env' });
 
-import indexRouter from './routes/index.js';
+import { router, myProxy } from './routes/index.js';
 import cors from 'cors';
 
 const app = express();
@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', indexRouter);
+app.use('/', router);
 
 app.set('port', process.env.PORT || 3011);
 const server = app.listen(app.get('port'), () => {
