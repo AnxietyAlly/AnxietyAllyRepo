@@ -61,13 +61,13 @@
 
     <div class="grid grid-cols-2 gap-4 mb-5 mx-5 grid-rows-2">
       <div class="place-self-auto">
-        <a href="/testing" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+        <a href="/dailycheckup-positive" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
           Good
         </a>
     </div>
 
     <div class="place-self-auto">
-      <a href="/dailycheckup-results" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+      <a href="/dailycheckup-negative" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
         Bad
       </a>
       </div>
