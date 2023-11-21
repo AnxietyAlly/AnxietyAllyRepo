@@ -3,28 +3,40 @@
 	<div class="h-2" />
 	<img class="w-40 h-100" src=".//dailycheckup.png" alt="Anxiety Ally Logo" />
 
-	<div id="initialContent" >
+	<div id="initialContent">
 		<div class="h-20 mt-8 space-y-6">
-      <div class="flex justify-center">
-			<p class="text-xl font-semibold  text-white">How are you feeling today?</p>
+			<div class="flex justify-center">
+				<p class="text-xl font-semibold text-white">How are you feeling today?</p>
+			</div>
 		</div>
-    </div>
 
+		<div class="flex justify-center">
+			<input
+				type="range"
+				min="1"
+				max="100"
+				value="50"
+				class="w-2/3 md:w-1/2 lg:w-1/3 h-4 rounded-md shadow bg-gray-200 bg-opacity-25 appearance-none focus:outline-none opacity-70 hover:opacity-100 border-2 border-gray-300"
+				id="myRange"
+				style="background-color: white; --thumb-color: darkgrey; --thumb-size: 24px;"
+			/>
+		</div>
 
-    <div class=" flex justify-center ">
-      <div class="w-2/3 md:w-1/2 lg:w-1/3 rounded-md shadow bg-gray-200 bg-opacity-25">
-        <img class="w-auto h-20 mx-auto p-0" src=".//Emotion-scale.png" alt="Emotion scale" />
-      </div>
-    </div>
+		<div class=" flex justify-center">
+			<div class="w-2/3 md:w-1/2 lg:w-1/3 rounded-md shadow bg-gray-200 bg-opacity-25 mt-4">
+				<img class="w-auto h-20 mx-auto p-0" src=".//Emotion-scale.png" alt="Emotion scale" />
+			</div>
+		</div>
 
 		<div class="h-20 mt-8 space-y-6">
-      <div class="flex justify-center">
+			<div class="flex justify-center">
 				<button
 					id="submitButton"
-					class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+					class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+				>
 					Submit
 				</button>
-      </div>
+			</div>
 		</div>
 
 		<div class="h-20 mt-8 space-y-6">
@@ -44,35 +56,44 @@
 
 	<div id="otherContent" class="hidden">
 		<div class="h-20 mt-8 space-y-6">
-      <div class="flex justify-center">
-			<p class="text-xl font-semibold text-white">Why are you feeling this way?</p>
-		</div>
-    </div>
-
-		<div class="flex justify-center opacity-75">
-            <input type="text" class="h-44 w-80 rounded-md bg-opacity-50" placeholder="Type here..." />
+			<div class="flex justify-center">
+				<p class="text-xl font-semibold text-white">Why are you feeling this way?</p>
+			</div>
 		</div>
 
-    <div class="h-20 mt-8 space-y-6">
-        <div class="flex justify-center">
-        <p class="text-xl font-semibold text-white">So how did you feel overall?</p>
-      </div>
-    </div>
+		<div class="flex justify-center">
+			<input
+				type="text"
+				class="opacity-75 h-44 w-80 rounded-md bg-opacity-50 text-left text-xs vertical-align: text-top"
+				placeholder="Type here..."
+			/>
+		</div>
 
-    <div class="grid grid-cols-2 gap-4 mb-5 mx-5 grid-rows-2">
-      <div class="place-self-auto">
-        <a href="/dailycheckup-positive" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-          Good
-        </a>
-    </div>
+		<div class="h-20 mt-8 space-y-6">
+			<div class="flex justify-center">
+				<p class="text-xl font-semibold text-white">So how did you feel overall?</p>
+			</div>
+		</div>
 
-    <div class="place-self-auto">
-      <a href="/dailycheckup-negative" class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-        Bad
-      </a>
-      </div>
-    </div>
+		<div class="grid grid-cols-2 gap-4 mb-5 mx-5 grid-rows-2">
+			<div class="place-self-auto">
+				<a
+					href="/dailycheckup-positive"
+					class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+				>
+					Good
+				</a>
+			</div>
 
+			<div class="place-self-auto">
+				<a
+					href="/dailycheckup-negative"
+					class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+				>
+					Bad
+				</a>
+			</div>
+		</div>
 	</div>
 
 	<style>
@@ -83,6 +104,24 @@
 
 		.button-color {
 			background-color: #0c9eff;
+		}
+
+		input[type='range']::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: var(--thumb-size, 16px);
+			height: var(--thumb-size, 16px);
+			background-color: var(--thumb-color, #fff);
+			border-radius: 50%;
+			cursor: pointer;
+		}
+
+		input[type='range']::-moz-range-thumb {
+			width: var(--thumb-size, 16px);
+			height: var(--thumb-size, 16px);
+			background-color: var(--thumb-color, #fff);
+			border-radius: 50%;
+			cursor: pointer;
 		}
 	</style>
 
