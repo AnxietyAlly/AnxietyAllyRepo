@@ -22,6 +22,10 @@
 			/>
 		</div>
 
+		<p id="demo">
+		
+		</p>
+
 		<div class=" flex justify-center">
 			<div class="w-2/3 md:w-1/2 lg:w-1/3 rounded-md shadow bg-gray-200 bg-opacity-25 mt-4">
 				<img class="w-auto h-20 mx-auto p-0" src=".//Emotion-scale.png" alt="Emotion scale" />
@@ -31,7 +35,7 @@
 		<div class="h-20 mt-8 space-y-6">
 			<div class="flex justify-center">
 				<button
-					id="submitButton"
+					id="submit"
 					class="w-30 flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl text-white button-color hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
 				>
 					Submit
@@ -126,7 +130,15 @@
 	</style>
 
 	<script>
-		const submitButton = document.getElementById('submitButton');
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+  			output.innerHTML = this.value;
+		}
+
+		const submitButton = document.getElementById('submit');
 		const initialContent = document.getElementById('initialContent');
 		const otherContent = document.getElementById('otherContent');
 
