@@ -52,6 +52,7 @@ declare module '$env/static/private' {
 	export const DISPLAY: string;
 	export const DriverData: string;
 	export const EDITOR: string;
+  export const EFC_12748: string;
   export const EFC_20604: string;
 	export const EFC_8580: string;
 	export const EXEPATH: string;
@@ -102,6 +103,7 @@ declare module '$env/static/private' {
 	export const OneDrive: string;
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const OneDriveConsumer: string;
+  export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const ORIGINAL_PATH: string;
 	export const ORIGINAL_TEMP: string;
 	export const ORIGINAL_TMP: string;
@@ -203,6 +205,7 @@ declare module '$env/dynamic/private' {
 		DISPLAY: string;
 		DriverData: string;
 		EDITOR: string;
+    EFC_12748: string;
     EFC_20604: string;
 		EFC_8580: string;
 		EXEPATH: string;
@@ -253,6 +256,7 @@ declare module '$env/dynamic/private' {
 		OneDrive: string;
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		OneDriveConsumer: string;
+    ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		ORIGINAL_PATH: string;
 		ORIGINAL_TEMP: string;
 		ORIGINAL_TMP: string;
