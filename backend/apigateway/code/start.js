@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', router);
+app.use(cors());
 
 app.set('port', process.env.PORT || 3010);
 const server = app.listen(app.get('port'), () => {

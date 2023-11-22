@@ -1,4 +1,5 @@
 <script>
+	import { browser } from '$app/environment';
 
 	/**
 	 * Async function to get the data from the SWAPI api
@@ -14,10 +15,22 @@
 		}
 	}
 
-	getApiData('http://apigateway:3010/questionnaire/questions')
-	.then((questions) => {
-		console.log(questions);
-	});
+	
+	let questionsFromDatabase = [];
+	if (browser) {
+		window.addEventListener('load', function () {
+			getApiData('http://localhost:3010/questionnaireApi/questionnaire/questions') //
+			.then((questionLinksJSON) => {
+				const questionLinks = questionLinksJSON.data
+				for (let i = 0; i < questionLinks.length; i++) {
+					getApiData(`http://localhost:3010/questionnaireApi${questionLinks[i]}`) //
+					.then((question) => {
+						questionsFromDatabase.push(question);
+					});
+				};
+			});
+		});
+	}
 
 	let questions = [
 		{

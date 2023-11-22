@@ -19,7 +19,7 @@ const options = {
 
 const myProxy = createProxyMiddleware(options);
 
-router.get('/', (req, res, next) => {
+router.get('/', cors(), (req, res, next) => {
   res.json('Hi, this is the apigateway');
 });
 
