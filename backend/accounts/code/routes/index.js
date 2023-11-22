@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import {
-  getAccounts,
+  getAllAccounts,
+  getSingleAccount,
   setAccounts,
 } from '../controllers/accountsController.js';
 const router = express.Router();
@@ -10,8 +11,6 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
   res.json('Hi, this is the accounts microservice');
 });
-// router.get('/example', checkName, responseExample);
-// router.post('/example', checkName, updateExample);
 
 router.options('/accounts', (req, res, next) => {
   try {
@@ -30,7 +29,8 @@ router.options('/accounts', (req, res, next) => {
 });
 
 // get a collection of all the accounts, you can also use a query
-router.get('/accounts', cors(), getAccounts);
-router.post('/accounts', cors(), setAccounts);
+router.get('/accounts', cors(), getAllAccounts);
+router.get('/accounts/:id', cors(), getSingleAccount);
+//router.post('/accounts', cors(), setAccounts);
 
 export default router;

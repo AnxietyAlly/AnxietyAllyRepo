@@ -3,39 +3,16 @@ import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 const router = express.Router();
 
-// create a proxy for each microservice
-//const gamesProxy = createProxyMiddleware({
-//  target: 'https://armorgames.com',
-//  pathRewrite: {
-//    '^/armorGamesApi': '/', // remove base path
-//  },
-//  changeOrigin: true,
-//});
-
-//const questionnaireProxy = createProxyMiddleware({
-//  target: 'http://127.0.0.1:3010',
-//  secure: false,
-//  changeOrigin: true,
-//});
-
-//const cheapSharkProxy = createProxyMiddleware({
-//  target: 'https://www.cheapshark.com',
-//  pathRewrite: {
-//    '^/cheapSharkApi': '/', // remove base path
-//  },
-//  changeOrigin: true,
-//});
-
 const proxyTable = {
-  '/armorGamesApi': 'https://armorgames.com',
-  '/cheapSharkApi': 'https://www.cheapshark.com'
+  '/questionnaireApi': 'http://questionnaire:3012',
+  '/accountsApi': 'http://msaccounts:3010'
 };
 
 const options = {
   router: proxyTable,
   pathRewrite: {
-    '^/armorGamesApi': '',
-    '^/cheapSharkApi': ''
+    '^/questionnaireApi': '',
+    '^/accountsApi': ''
   },
   changeOrigin: true,
 };
@@ -51,23 +28,5 @@ try {
 } catch (err) {
   console.log(err);
 }
-
-//try {
-//  router.use('', cors(), gamesProxy);
-//} catch (err) {
-//  console.log(err);
-//}
-
-//try {
-//  router.use('/msaccounts', cors(), questionnaireProxy);
-//} catch (err) {
-//  console.log(err);
-//}
-
-//try {
-//  router.use('', cors(), cheapSharkProxy);
-//} catch (err) {
-//  console.log(err);
-//}
 
 export { router, myProxy };
