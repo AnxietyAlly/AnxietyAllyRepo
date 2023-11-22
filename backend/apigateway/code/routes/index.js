@@ -5,7 +5,7 @@ const router = express.Router();
 
 const proxyTable = {
   '/questionnaireApi': 'http://questionnaire:3012',
-  '/accountsApi': 'http://msaccounts:3010'
+  '/accountsApi': 'http://msaccounts:3011'
 };
 
 const options = {
