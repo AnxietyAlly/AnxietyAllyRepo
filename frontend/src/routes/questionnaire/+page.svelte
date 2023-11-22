@@ -4,7 +4,7 @@
 		{
 			"question": "Question 1: How often do you feel a sense of excessive worry or fear without a specific cause.",
 			"options": [
-				"Frequqently",
+				"Frequently",
 				"Never",
 				"Not Often",
 				"Sometimes"
@@ -14,7 +14,7 @@
 		{
 			"question": "Question 2: Do you often feel tense or anxious? For example, during a specific situation or when you're about to go to sleep.",
 			"options": [
-				"Frequqently",
+				"Frequently",
 				"Never",
 				"Not often",
 				"Sometimes"
@@ -24,7 +24,7 @@
 		{
 			"question": "Question 3: Do you avoid certain situations because of your fears? ",
 			"options": [
-				"Freuqently",
+				"Frequently",
 				"Never",
 				"Not often",
 				"Sometimes"
