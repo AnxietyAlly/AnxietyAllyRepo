@@ -1,18 +1,17 @@
 import express from 'express';
 import cors from 'cors';
 import {
-  getAllAccounts,
-  getSingleAccount,
-  setAccounts,
-} from '../controllers/accountsController.js';
+  getAllQuestions,
+  getSingleQuestion
+} from '../controllers/questionnaireController.js';
 const router = express.Router();
 
 // routes
 router.get('/', (req, res, next) => {
-  res.json('Hi, this is the accounts microservice');
+  res.json('Hi, this is the questionnaire microservice');
 });
 
-router.options('/accounts', (req, res, next) => {
+router.options('/questionnaire', (req, res, next) => {
   try {
     //set header before response
     res.header({
@@ -29,8 +28,8 @@ router.options('/accounts', (req, res, next) => {
 });
 
 // get a collection of all the accounts, you can also use a query
-router.get('/accounts', cors(), getAllAccounts);
-router.get('/accounts/:id', cors(), getSingleAccount);
-//router.post('/accounts', cors(), setAccounts);
+router.get('/questionnaire/questions', cors(), getAllQuestions);
+router.get('/questionnaire/questions/:id', cors(), getSingleQuestion);
+//router.post('/questionnaire', cors(), setResults);
 
 export default router;

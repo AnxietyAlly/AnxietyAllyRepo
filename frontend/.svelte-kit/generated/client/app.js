@@ -13,7 +13,7 @@ export const nodes = [
 export const server_loads = [];
 
 export const dictionary = {
-		"/": [2],
+		"/": [2],=
 		"/dailycheckup-negative": [4],
 		"/dailycheckup-positive": [5],
 		"/dailycheckup": [3],
