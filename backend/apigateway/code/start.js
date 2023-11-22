@@ -13,8 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', router);
+app.use(cors());
 
-app.set('port', process.env.PORT || 3011);
+app.set('port', process.env.PORT || 3010);
 const server = app.listen(app.get('port'), () => {
   console.log(`🍿 Express running → PORT ${server.address().port}`);
 });
