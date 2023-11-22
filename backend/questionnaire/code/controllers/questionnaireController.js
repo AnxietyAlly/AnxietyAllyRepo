@@ -24,21 +24,21 @@ const tempResponse = {
   },
 };
 
-export async function getAllAccounts(req, res) {
+export async function getAllQuestions(req, res) {
   try {
-    const stmnt = db.prepare("SELECT * FROM accounts");
+    const stmnt = db.prepare("SELECT * FROM questionnaireQuestions");
     const rows = stmnt.all();
     const jsonToSend = {
       meta: {
-        name: "Accounts",
-        title: "All accounts",
+        name: "Questionnaire questions",
+        title: "All questions for the questionnaire",
         date: getToday(),
         originalUrl: `${req.originalUrl}`,
       },
       data: []
     }
     for (let i = 0; i < rows.length; i++) {
-      jsonToSend.data.push(`/accounts/${rows[i].id}`)
+      jsonToSend.data.push(`/questionnaire/questions/${rows[i].id}`)
     }
     res.status(200).json(jsonToSend);
   } catch (err) {
@@ -46,15 +46,15 @@ export async function getAllAccounts(req, res) {
   }
 }
 
-export async function getSingleAccount(req, res) {
+export async function getSingleQuestion(req, res) {
   try {
     const params = [req.params.id];
-    const stmnt = db.prepare(`SELECT * FROM accounts where id = ?`);
+    const stmnt = db.prepare(`SELECT * FROM questionnaireQuestions where id = ?`);
     const row = stmnt.get(params);
     const jsonToSend = {
       meta: {
-        name: "Single account",
-        title: "Specific account",
+        name: "Questionnaire question",
+        title: "Specific question for the questionnaire",
         date: getToday(),
         originalUrl: `${req.originalUrl}`,
       },
@@ -63,23 +63,5 @@ export async function getSingleAccount(req, res) {
     res.status(200).json(jsonToSend);
   } catch (err) {
     console.log(err);
-  }
-}
-
-export async function setAccounts(req, res) {
-  let body = req.body;
-  let url = req.url;
-  var url_parts = url.replace(/\/\s*$/, '').split('/');
-  url_parts.shift();
-  if (req.body.starttime && req.body.id && req.body.name) {
-    res
-      .status(200)
-      .send(
-        `Hi ${req.body.name}! I made an accounts for: ${url_parts[3]}-${url_parts[2]} at ${req.body.starttime}!`
-      );
-  } else {
-    res
-      .status(200)
-      .send('Hi love. I cannot make any accounts because something is missing');
   }
 }

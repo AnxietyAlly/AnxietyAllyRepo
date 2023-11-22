@@ -22,7 +22,17 @@ services:
       - "3011:3011"
     working_dir: /usr/src/app
     command: bash -c "npm install && npm run dev"
-
+  questionnaire:
+    container_name: questionnaire
+    build: ./questionnaire
+    volumes:
+      - ./questionnaire/code:/usr/src/app
+    networks:
+      - msanxietyally
+    ports:
+      - "3012:3012"
+    working_dir: /usr/src/app
+    command: bash -c "npm install && npm run dev"
 networks:
   msanxietyally:
     driver: bridge
