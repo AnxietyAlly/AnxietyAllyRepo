@@ -4,7 +4,7 @@
 
 	<div>
 	  <div class="grid grid-cols-3 gap-4 mb-5 mx-5">
-        <a href="/" class="col-span-3 bg-white max-h-32 w-80 rounded-md shadow relative">
+        <a href="/dailycheckup" class="col-span-3 bg-white max-h-32 w-80 rounded-md shadow relative">
           <img class="h-full w-full object-cover opacity-50" src=".//medical-checkup-vector-illustration_677179-53.avif" alt="Artwork about a woman crying">
           <div class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center">
             <h2 class="text-center text-2xl font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,1)]">Daily Checkup</h2>

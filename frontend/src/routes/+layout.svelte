@@ -15,20 +15,20 @@
 		<AppBar background="bg-blue-300 bg-opacity-30">
 			<svelte:fragment slot="trail">
 				<a
-					class="btn btn-sm variant-ghost-surface"
+					class="btn btn-sm variant-ghost-surface "
 					href="/"
 					rel="noreferrer"
 				>
-					<img src=".//book-alt.png" alt="Anxiety Ally Logo">
+					<img class="max-h-12" src=".//book-alt.png" alt="Anxiety Ally Logo">
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="/dashboard"
 					rel="noreferrer"
 				>
-					<img src=".//home-icon.png" alt="Anxiety Ally Logo">
+					<img class="max-h-12" src=".//home-icon.png" alt="Anxiety Ally Logo">
 				</a>
-				<a
+				<!-- <a
 					class="btn btn-sm variant-ghost-surface"
 					href="/"
 					rel="noreferrer"
@@ -41,7 +41,7 @@
 				rel="noreferrer"
 				>
 					<img src=".//settings.png" alt="Anxiety Ally Logo">
-				</a>	
+				</a>	 -->
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
