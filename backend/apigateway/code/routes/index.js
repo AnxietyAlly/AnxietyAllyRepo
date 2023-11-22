@@ -3,12 +3,30 @@ import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 const router = express.Router();
 
-// create a proxy for each microservice
-const accountProxy = createProxyMiddleware({
-  target: 'http://msaccounts:3010',
+const proxyTable = {
+  '/questionnaireApi': 'http://questionnaire:3012',
+  '/accountsApi': 'http://msaccounts:3010'
+};
+
+const options = {
+  router: proxyTable,
+  pathRewrite: {
+    '^/questionnaireApi': '',
+    '^/accountsApi': ''
+  },
   changeOrigin: true,
+};
+
+const myProxy = createProxyMiddleware(options);
+
+router.get('/', (req, res, next) => {
+  res.json('Hi, this is the apigateway');
 });
 
-router.use('/accounts', cors(), accountProxy);
+try {
+  router.use('/', cors(), myProxy);
+} catch (err) {
+  console.log(err);
+}
 
-export default router;
+export { router, myProxy };

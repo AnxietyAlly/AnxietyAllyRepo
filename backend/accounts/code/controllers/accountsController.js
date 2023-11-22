@@ -1,4 +1,8 @@
-import data from './accounts.json' assert { type: 'json' };
+import Database from 'better-sqlite3';
+import * as dotenv from 'dotenv';
+dotenv.config({ path: 'variables.env' });
+
+const db = new Database(process.env.DB_PATH, { verbose: console.log });
 
 function getToday() {
   const date = new Date();
@@ -20,12 +24,45 @@ const tempResponse = {
   },
 };
 
-export async function getAccounts(req, res) {
+export async function getAllAccounts(req, res) {
   try {
-    //set header before response
-    res.status(200).send(data);
+    const stmnt = db.prepare("SELECT * FROM accounts");
+    const rows = stmnt.all();
+    const jsonToSend = {
+      meta: {
+        name: "Accounts",
+        title: "All accounts",
+        date: getToday(),
+        originalUrl: `${req.originalUrl}`,
+      },
+      data: []
+    }
+    for (let i = 0; i < rows.length; i++) {
+      jsonToSend.data.push(`/accounts/${rows[i].id}`)
+    }
+    res.status(200).json(jsonToSend);
   } catch (err) {
-    next(err);
+    console.log(err);
+  }
+}
+
+export async function getSingleAccount(req, res) {
+  try {
+    const params = [req.params.id];
+    const stmnt = db.prepare(`SELECT * FROM accounts where id = ?`);
+    const row = stmnt.get(params);
+    const jsonToSend = {
+      meta: {
+        name: "Single account",
+        title: "Specific account",
+        date: getToday(),
+        originalUrl: `${req.originalUrl}`,
+      },
+      data: row
+    }
+    res.status(200).json(jsonToSend);
+  } catch (err) {
+    console.log(err);
   }
 }
 

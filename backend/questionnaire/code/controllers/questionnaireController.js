@@ -1,4 +1,3 @@
-import data from './accounts.json' assert { type: 'json' };
 import Database from 'better-sqlite3';
 import * as dotenv from 'dotenv';
 dotenv.config({ path: 'variables.env' });
@@ -53,13 +52,13 @@ export async function getSingleQuestion(req, res) {
     const stmnt = db.prepare(`SELECT * FROM questionnaireQuestions where id = ?`);
     const row = stmnt.get(params);
     const jsonToSend = {
-      "meta": {
-        "name": "Questionnaire question",
-        "title": "Specific question for the questionnaire",
-        "date": getToday(),
-        "originalUrl": `${req.originalUrl}`,
+      meta: {
+        name: "Questionnaire question",
+        title: "Specific question for the questionnaire",
+        date: getToday(),
+        originalUrl: `${req.originalUrl}`,
       },
-      "data": row
+      data: row
     }
     res.status(200).json(jsonToSend);
   } catch (err) {
