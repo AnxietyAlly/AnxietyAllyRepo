@@ -22,9 +22,7 @@
 			/>
 		</div>
 
-		<p id="demo">
-		
-		</p>
+		<!-- <p id="demo"></p> -->
 
 		<div class=" flex justify-center">
 			<div class="w-2/3 md:w-1/2 lg:w-1/3 rounded-md shadow bg-gray-200 bg-opacity-25 mt-4">
@@ -45,8 +43,8 @@
 
 		<div class="h-20 mt-8 space-y-6">
 			<div class="flex justify-center">
-				<div class="w-2/3 md:w-1/2 lg:w-1/4 bg-gray-200 bg-opacity-25 p-4">
-					<p class="text-xs text-center text-white italic">
+				<div class="w-2/3 md:w-1/2 lg:w-1/4 bg-gray-200 bg-opacity-60 rounded-md p-4">
+					<p class="text-xs text-center text-blue-800 italic">
 						To understand your emotions, start by pausing and tuning into your physical sensations.
 						Label the emotions you're experiencing (happy, sad, anxious, etc.) and consider what
 						triggered them. Reflect on these feelings, perhaps by journaling, seeking feedback, or
@@ -130,21 +128,20 @@
 	</style>
 
 	<script>
-		var slider = document.getElementById("myRange");
-		var output = document.getElementById("demo");
-		output.innerHTML = slider.value;
-
-		slider.oninput = function() {
-  			output.innerHTML = this.value;
-		}
-
 		const submitButton = document.getElementById('submit');
 		const initialContent = document.getElementById('initialContent');
 		const otherContent = document.getElementById('otherContent');
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
 
 		submitButton.addEventListener('click', (event) => {
 			initialContent.style.display = 'none';
 			otherContent.style.display = 'block';
 		});
+
+		output.innerHTML = slider.value;
+		slider.oninput = function() {
+  			output.innerHTML = this.value;
+		}
 	</script>
 </div>
