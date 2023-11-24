@@ -5,11 +5,19 @@ import {
   getSingleAccount,
   setAccounts,
 } from '../controllers/accountsController.js';
+const bodyParser = require('body-parser');
 const router = express.Router();
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
 
 // routes
 router.get('/', (req, res, next) => {
   res.json('Hi, this is the accounts microservice');
+});
+
+router.post('/', (req, res) => {
+  res.send('POST request to the accounts microservice')
 });
 
 router.options('/accounts', (req, res, next) => {
