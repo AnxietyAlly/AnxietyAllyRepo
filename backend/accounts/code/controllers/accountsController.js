@@ -66,20 +66,21 @@ export async function getSingleAccount(req, res) {
   }
 }
 
-export async function setAccounts(req, res) {
-  let body = req.body;
-  let url = req.url;
-  var url_parts = url.replace(/\/\s*$/, '').split('/');
-  url_parts.shift();
-  if (req.body.starttime && req.body.id && req.body.name) {
-    res
-      .status(200)
-      .send(
-        `Hi ${req.body.name}! I made an accounts for: ${url_parts[3]}-${url_parts[2]} at ${req.body.starttime}!`
-      );
+export async function makeNewAccount(req, res) {
+  const body = req.body;
+  const stmnt = db.prepare('INSERT INTO accounts (name, email, password) VALUES (?, ?, ?)');
+  if (!(body.name == null || body.name == undefined || body.email == null || body.email == undefined || body.password == null || body.password == undefined)) {
+    if (!(body.name == "" || body.email == "" || body.password == "")) {
+      try {
+        stmnt.run(body.name, body.email, body.password);
+      } catch (err) {
+        res.send(err);
+      }
+      res.send(`New row inserted with values name (${body.name}) and email (${body.email})`);
+    } else {
+      res.send('Values cannot be empty');
+    }
   } else {
-    res
-      .status(200)
-      .send('Hi love. I cannot make any accounts because something is missing');
+    res.send('One of the values was missing');
   }
 }

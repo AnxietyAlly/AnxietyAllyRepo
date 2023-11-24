@@ -1,7 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import { createProxyMiddleware } from 'http-proxy-middleware';
+import bodyParser from 'body-parser';
 const router = express.Router();
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
+
+import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
 
 const proxyTable = {
   '/questionnaireApi': 'http://questionnaire:3012',
@@ -15,6 +19,7 @@ const options = {
     '^/accountsApi': ''
   },
   changeOrigin: true,
+  onProxyReq: fixRequestBody,
 };
 
 const myProxy = createProxyMiddleware(options);
