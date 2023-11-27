@@ -1,16 +1,25 @@
 import express from 'express';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import {
   getAllAccounts,
   getSingleAccount,
-  setAccounts,
+  makeNewAccount,
 } from '../controllers/accountsController.js';
 const router = express.Router();
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
 
 // routes
 router.get('/', (req, res, next) => {
   res.json('Hi, this is the accounts microservice');
 });
+router.post('/', cors(), makeNewAccount);
+
+//router.post('/', cors(), (req, res) => {
+//  res.send('POST request to the accounts microservice')
+//});
 
 router.options('/accounts', (req, res, next) => {
   try {
