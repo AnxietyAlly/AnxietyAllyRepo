@@ -1,6 +1,4 @@
 <script>
-	import { slide } from "svelte/transition";
-
 	import { onMount } from 'svelte';
 	// var output = document.getElementById("demo");
 	// output.innerHTML = slider.value;
