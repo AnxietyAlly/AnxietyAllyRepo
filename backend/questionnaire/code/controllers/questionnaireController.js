@@ -24,21 +24,21 @@ const tempResponse = {
   },
 };
 
-export async function getAllAccounts(req, res) {
+export async function getAllQuestions(req, res) {
   try {
-    const stmnt = db.prepare("SELECT * FROM accounts");
+    const stmnt = db.prepare("SELECT * FROM questionnaireQuestions");
     const rows = stmnt.all();
     const jsonToSend = {
       meta: {
-        name: "Accounts",
-        title: "All accounts",
+        name: "Questionnaire questions",
+        title: "All questions for the questionnaire",
         date: getToday(),
         originalUrl: `${req.originalUrl}`,
       },
       data: []
     }
     for (let i = 0; i < rows.length; i++) {
-      jsonToSend.data.push(`/accounts/${rows[i].id}`)
+      jsonToSend.data.push(`/questionnaire/questions/${rows[i].id}`)
     }
     res.status(200).json(jsonToSend);
   } catch (err) {
@@ -46,15 +46,15 @@ export async function getAllAccounts(req, res) {
   }
 }
 
-export async function getSingleAccount(req, res) {
+export async function getSingleQuestion(req, res) {
   try {
     const params = [req.params.id];
-    const stmnt = db.prepare(`SELECT * FROM accounts where id = ?`);
+    const stmnt = db.prepare(`SELECT * FROM questionnaireQuestions where id = ?`);
     const row = stmnt.get(params);
     const jsonToSend = {
       meta: {
-        name: "Single account",
-        title: "Specific account",
+        name: "Questionnaire question",
+        title: "Specific question for the questionnaire",
         date: getToday(),
         originalUrl: `${req.originalUrl}`,
       },
@@ -63,24 +63,5 @@ export async function getSingleAccount(req, res) {
     res.status(200).json(jsonToSend);
   } catch (err) {
     console.log(err);
-  }
-}
-
-export async function makeNewAccount(req, res) {
-  const body = req.body;
-  const stmnt = db.prepare('INSERT INTO accounts (name, email, password) VALUES (?, ?, ?)');
-  if (!(body.name == null || body.name == undefined || body.email == null || body.email == undefined || body.password == null || body.password == undefined)) {
-    if (!(body.name == "" || body.email == "" || body.password == "")) {
-      try {
-        stmnt.run(body.name, body.email, body.password);
-      } catch (err) {
-        res.send(err);
-      }
-      res.send(`New row inserted with values name (${body.name}) and email (${body.email})`);
-    } else {
-      res.send('Values cannot be empty');
-    }
-  } else {
-    res.send('One of the values was missing');
   }
 }

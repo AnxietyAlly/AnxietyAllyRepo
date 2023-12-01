@@ -10,42 +10,38 @@
 
 <!-- App Shell -->
 <AppShell>
-	<svelte:fragment slot="pageFooter">
+	<svelte:fragment slot="footer">
 		<!-- App Bar -->
-		<AppBar>
+		<AppBar background="bg-blue-300 bg-opacity-30">
 			<svelte:fragment slot="trail">
 				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
+					class="btn btn-sm variant-ghost-surface "
+					href="/"
 					rel="noreferrer"
 				>
-					Home
+					<img class="max-h-12" src=".//book-alt.png" alt="Anxiety Ally Logo">
 				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
+					href="/dashboard"
 					rel="noreferrer"
 				>
-					Dashboard
+					<img class="max-h-12" src=".//home-icon.png" alt="Anxiety Ally Logo">
 				</a>
-				<a
+				<!-- <a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
+					href="/"
 					rel="noreferrer"
 				>
-					Profile
+					<img src=".//user.png" alt="Anxiety Ally Logo">
 				</a>
 				<a
 				class="btn btn-sm variant-ghost-surface"
-				href="https://github.com/skeletonlabs/skeleton"
-				target="_blank"
+				href="/"
 				rel="noreferrer"
 				>
-					Settings
-				</a>
+					<img src=".//settings.png" alt="Anxiety Ally Logo">
+				</a>	 -->
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
